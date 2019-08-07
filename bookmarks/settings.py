@@ -120,6 +120,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# allow users upload file
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # add settings by lzy
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
