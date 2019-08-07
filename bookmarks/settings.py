@@ -27,17 +27,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+SITE_ID = 2
 # Application definition
 
 INSTALLED_APPS = [
-    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,11 +125,11 @@ LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
-# Email settings
-#@EMAIL_HOST = 'smtp.qq.com'
-#@EMAIL_PORT = 587
-#@EMAIL_HOST_USER = 'banananer@qq.com'
-#@EMAIL_HOST_PASSWORD = 'wyqsjcmlaszlbcch'
-#@EMAIL_USE_TLS =True
+#Email settings
+#EMAIL_HOST = 'smtp.qq.com'
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = 'banananer@qq.com'
+#EMAIL_HOST_PASSWORD = 'wyqsjcmlaszlbcch'
+#EMAIL_USE_TLS =True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
