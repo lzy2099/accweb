@@ -31,13 +31,13 @@ SITE_ID = 2
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +137,8 @@ LOGOUT_URL = 'logout'
 #EMAIL_USE_TLS =True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+#Auth by email
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
