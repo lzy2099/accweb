@@ -25,7 +25,7 @@ SECRET_KEY = 'du$j3d2r!-t3ggb!$$u*nd-+nsbg^!20#^!+ra()h^&t9h%a--'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['mysite.com','127..0.0.1']
 
 SITE_ID = 2
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -141,4 +142,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.google.GoogleOAuth2',
 ]
+
+# google auth
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '249725698161-u50v54mlh5rb8ifncfvuvcvkj9l4eqpb.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Hb95dXTo2_greHG-Z2uFkgeF'
+
+
