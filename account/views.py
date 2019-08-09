@@ -24,7 +24,7 @@ def edit(request):
     else:
         try:
             Profile.objects.get(user=request.user)
-        except Profile.DoseNotExist:
+        except Profile.DoesNotExist:
             Profile.objects.create(user=request.user)
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
