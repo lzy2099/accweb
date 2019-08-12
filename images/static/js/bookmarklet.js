@@ -1,6 +1,6 @@
 (function () {
     let jquery_version = '3.3.1';
-    let site_url='http://127.0.0.1:8000/';
+    let site_url='https://941b649b.ngrok.io/';
     let static_url = site_url + 'static/';
     let min_width = 100;
     let min_height = 100;
@@ -27,7 +27,20 @@ function bookmarklet(msg){
         jQuery('#bookmarklet .images').append('<a href="#"><img src="'+ image_url +'" /></a>');
     }
 });
+
+    jQuery('#bookmarklet .images a').click(function(e){
+      selected_image = jQuery(this).children('img').attr('src');
+      
+      jQuery('#bookmarklet').hide();
+      
+      window.open(site_url +'images/create/?url='
+                  + encodeURIComponent(selected_image)
+                  + '&title='
+                  + encodeURIComponent(jQuery('title').text()),
+                  '_blank');
+    });
 };
+
 
 
     if(typeof window.jQuery !== 'undefined'){
