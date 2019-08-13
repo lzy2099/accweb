@@ -18,3 +18,7 @@ pip install sorl-thumbnail==12.4.1
 settins.py 添加设置
    'sorl.thumbnail',
 
+# 修改网站域名需要修改一下文件中的域名
+images/static/js/bookmarklet.js 
+images/templates/bookmarklet_launcher.js
+bookmarks/setting.py
