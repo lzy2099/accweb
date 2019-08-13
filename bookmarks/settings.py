@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-
 import os
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -152,3 +152,6 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '249725698161-u50v54mlh5rb8ifncfvuvcvkj9l4eqpb.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Hb95dXTo2_greHG-Z2uFkgeF'
 
 
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
