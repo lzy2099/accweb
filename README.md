@@ -22,3 +22,11 @@ settins.py 添加设置
 images/static/js/bookmarklet.js 
 images/templates/bookmarklet_launcher.js
 bookmarks/setting.py
+
+# 安装Redis扩展
+pip install redis==2.10.6
+#settings.py 中添加
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
+

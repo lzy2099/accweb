@@ -25,7 +25,7 @@ SECRET_KEY = 'du$j3d2r!-t3ggb!$$u*nd-+nsbg^!20#^!+ra()h^&t9h%a--'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite.com','127..0.0.1','192.168.1.117','0568122f.ngrok.io']
+ALLOWED_HOSTS = ['mysite.com','127..0.0.1','192.168.1.117','cb0765c9.ngrok.io']
 
 SITE_ID = 2
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'social_django',
     'images.apps.ImagesConfig',
     'sorl.thumbnail',
+    'actions.apps.ActionsConfig',
 ]
 
 MIDDLEWARE = [
@@ -133,12 +134,12 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
 #Email settings
-#EMAIL_HOST = 'smtp.qq.com'
-#EMAIL_PORT = 587
-#EMAIL_HOST_USER = 'banananer@qq.com'
-#EMAIL_HOST_PASSWORD = 'wyqsjcmlaszlbcch'
-#EMAIL_USE_TLS =True
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'banananer@qq.com'
+EMAIL_HOST_PASSWORD = 'wyqsjcmlaszlbcch'
+EMAIL_USE_TLS =True
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #Auth by email
 AUTHENTICATION_BACKENDS = [
@@ -155,3 +156,9 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Hb95dXTo2_greHG-Z2uFkgeF'
 ABSOLUTE_URL_OVERRIDES = {
     'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
 }
+
+
+# redis 扩展
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
